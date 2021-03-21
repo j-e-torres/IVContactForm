@@ -1,0 +1,94 @@
+.form {
+    display: flex;
+    flex-direction: column;
+
+    &__row {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 2.450625rem;
+
+        &:first-of-type {
+            margin-bottom: 3.075625rem;
+        }
+
+        &--end {
+            display: flex;
+            justify-content: flex-start;
+        }
+    }
+
+    &__group {
+        display: flex;
+        flex-direction: column;
+        flex: 0 1 25.625rem;
+
+        & label {
+            margin-bottom: 0.674375rem;
+
+            & span {
+                color: $color-red-1;
+            }
+        }
+
+        & input {
+            padding: 0.82875rem 0 0.67125rem 0.884375rem;
+            border: 1px solid $color-grey-light-2;
+            border-radius: 4px;
+            font-family: $font-family-secondary;
+            font-weight: 500;
+            font-size: $font-size-medium;
+            color: $color-grey-dark-2;
+
+            &::placeholder {
+                color: $color-grey-dark-2;
+                opacity: 0.3;
+            }
+
+            &:focus {
+                outline: none;
+                border: 1px solid $color-blue-2;
+            }
+        }
+
+        &--textArea {
+            flex: 0 0 100%;
+            display: flex;
+            flex-direction: column;
+
+            & label {
+                margin-bottom: 0.674375rem;
+            }
+
+            & textarea {
+                height: 6.625rem;
+                width: 100%;
+                border: 1px solid $color-grey-light-2;
+                resize: none;
+                border-radius: 4px;
+                font-family: $font-family-secondary;
+                font-weight: 500;
+                font-size: $font-size-medium;
+                color: $color-grey-dark-2;
+
+                &:focus {
+                    outline: none;
+                    border: 1px solid $color-blue-2;
+                }
+            }
+        }
+    }
+
+    &__button {
+        margin-right: 8.776875rem;
+    }
+
+    &__disclaimer {
+        font-size: $font-size-small;
+        color: $color-grey-dark-3;
+
+        & span {
+            color: $color-red-1;
+        }
+    }
+}
