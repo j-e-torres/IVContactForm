@@ -1,0 +1,28 @@
+.section-form {
+    background-color: $color-grey-light-1;
+    // height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding-top: 3rem;
+    padding-bottom: 4rem;
+}
+
+.contact {
+    background-color: #fff;
+    flex: 0 1 75%;
+
+    &__title {
+        color: $color-blue-1;
+        font-size: $font-size-heading;
+        font-weight: 500;
+    }
+
+    &__images {
+        background-color: $color-grey-light-4;
+        height: 200px;
+    }
+
+    &__footer {
+        background-color: $color-grey-light-4;
+    }
+}

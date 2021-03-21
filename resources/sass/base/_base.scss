@@ -1,0 +1,24 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 100%; // 1rem === 16px;
+    font-family: Roboto;
+}
+
+body {
+    box-sizing: border-box;
+    color: $color-grey-dark-1;
+}
+
+input,
+select,
+button {
+    font-family: inherit;
+    font-size: inherit;
+}
