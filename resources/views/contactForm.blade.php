@@ -14,71 +14,122 @@
         <section class="section-form">
             <div class="contact">
 
-                <header class="contact__header">
-                    <h1 class="contact__title">Contact Form Demo Project</h1>
 
-                    <div class="contact__images">
+                <h1 class="contact__title">Contact Form Demo Project</h1>
 
+                <div class="contact__images">
+
+                    <div class="contact__imageGroup">
+
+                        <div class="contact__imageText">
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo et necessitatibus vero eveniet perspiciatis perferendis laboriosam.</p>
+
+                            <br />
+
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet fugit quae non inventore odio dolor qui.</p>
+                        </div>
+
+
+                        <div class="contact__image">
+
+                            <img src="{{ asset('assets/img/godzilla.jpeg') }}" alt="godzilla" />
+                        </div>
                     </div>
 
-                </header>
+
+
+                    <div class="contact__imageGroup">
+
+                        <div class="contact__imageText">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos deserunt nesciunt laudantium quidem sequi nisi adipisci maiores.</p>
+                        </div>
+
+                        <div class="contact__image">
+                            <img src="{{ asset('assets/img/godzilla-shake.jpeg') }}" alt="godzilla shake">
+                        </div>
+                    </div>
+
+                </div>
+
 
                 <div class="contact__form">
                     <form class='form'>
-                        <div class="form__group">
-                            <label for="name" class="form__label">Name</label>
 
-                            <input
-                                type="text"
-                                placeholder="Enter your name"
-                                required
-                                id="name"
-                                class="form__input"
-                            />
+                        <div class="form__row">
+                            <div class="form__group">
+                                <label for="name" class="form__label">Name<span> *<span></label>
+
+                                <input
+                                    type="text"
+                                    placeholder="Enter your name"
+                                    required
+                                    id="name"
+                                    class="form__input"
+                                />
+                            </div>
+
+                            <div class="form__group">
+                                <label for="email" class="form__label">Email<span> *<span></label>
+
+                                <input
+                                    type="text"
+                                    placeholder="Enter your email"
+                                    required
+                                    id="email"
+                                    class="form__input"
+                                />
+                            </div>
                         </div>
 
-                        <div class="form__group">
-                            <label for="email" class="form__label">Email</label>
+                        <div class="form__row">
 
-                            <input
-                                type="text"
-                                placeholder="Enter your email"
-                                required
-                                id="email"
-                                class="form__input"
-                            />
+                            <div class="form__group">
+                                <label for="phone" class="form__label">Phone<span> *<span></label>
+
+                                <input
+                                    type="text"
+                                    placeholder="Enter your phone number"
+                                    required
+                                    id="phone"
+                                    class="form__input"
+                                />
+                            </div>
+
+                            <div class="form__group">
+
+                                <!-- <select -->
+                                <label for="subject" class="form__label">Subject of Inquiry</label>
+
+                                <input
+                                    type="text"
+                                    placeholder="— Please select one —"
+                                    required
+                                    id="subject"
+                                    class="form__input"
+                                />
+                            </div>
                         </div>
 
-                        <div class="form__group">
-                            <label for="phone" class="form__label">Phone</label>
+                        <div class="form__row">
+                            <div class="form__group--textArea">
+                                <label for="message" class="form__label">Your message</label>
 
-                            <input
-                                type="text"
-                                placeholder="Enter your phone number"
-                                required
-                                id="phone"
-                                class="form__input"
-                            />
+                                <textarea name="message"></textarea>
+
+                            </div>
                         </div>
 
-                        <div class="form__group">
-                            <label for="name" class="form__label">Subject of Inquiry</label>
+                        <div class="form__row--end">
+                            <div class="form__button">
+                                <button class="button">Submit</button>
+                            </div>
 
-                            <input
-                                type="text"
-                                placeholder="Enter your name"
-                                required
-                                id="name"
-                                class="form__input"
-                            />
+
+                            <p class="form__disclaimer">
+                                <span>* Required Fields. </span>Please be aware that we cannot ensure that communications sent over the Internet are secure. This includes correspondence sent through this form or by email. If you are uncomfortable with such risks, you may contact us by phone instead of using this form.
+                            </p>
                         </div>
 
-                        <div class="form__group--textArea">
-                            <label for="name" class="form__label">Your message</label>
-
-                            <textarea name="message"></textarea>
-
-                        </div>
                     </form>
 
                 </div>

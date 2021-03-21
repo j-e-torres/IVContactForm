@@ -1,10 +1,9 @@
 .section-form {
     background-color: $color-grey-light-1;
-    // height: 100vh;
     display: flex;
     justify-content: center;
-    padding-top: 3rem;
-    padding-bottom: 4rem;
+    padding-top: 5.125rem;
+    padding-bottom: 6.75rem;
 }
 
 .contact {
@@ -17,18 +16,59 @@
         color: $color-blue-1;
         font-size: $font-size-heading;
         font-weight: 500;
+        padding: 3.236875rem 0 2.95125rem 6.82375rem;
+        font-family: $font-family-secondary;
     }
 
     &__images {
-        background-color: $color-grey-light-4;
-        height: 200px;
+        @include alternateFormBGColor;
+        @include sidePadding;
+        padding-top: 3.499375rem;
+        padding-bottom: 3.500625rem;
+
+        display: flex;
+        justify-content: center;
+    }
+
+    &__imageGroup {
+        display: flex;
+        // justify-content: space-between;
+
+        &:first-of-type {
+            margin-right: 1.875rem;
+        }
+    }
+
+    &__imageText {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+    }
+
+    &__image {
+        // 75:53 aspect ratio
+        width: 18rem;
+        height: 12.72rem;
+        flex: 1;
+
+        & img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &__form {
+        @include sidePadding;
+        padding-top: 4.0125rem;
+        padding-bottom: 3.963125rem;
     }
 
     &__footer {
-        background-color: $color-grey-light-4;
+        @include alternateFormBGColor;
+        @include sidePadding;
         display: flex;
-        @include containerPadding;
-        // align-items:;
+        padding-top: 4.2025rem;
+        padding-bottom: 2.619375rem;
     }
 
     &__footerText {

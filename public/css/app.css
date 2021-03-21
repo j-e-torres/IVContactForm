@@ -8,7 +8,7 @@
 
 html {
   font-size: 100%;
-  font-family: Roboto;
+  font-family: Roboto, "Nunito", sans-serif;
   line-height: 1.875;
 }
 
@@ -24,12 +24,129 @@ button {
   font-size: inherit;
 }
 
+.button {
+  width: 190px;
+  height: 46px;
+  font-family: Montserrat;
+  text-transform: uppercase;
+  color: #ffffff;
+  background-color: #1c89c6;
+  border: 1px solid #398ab7;
+  letter-spacing: 0.64px;
+  border-radius: 4px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form__row {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2.450625rem;
+}
+
+.form__row:first-of-type {
+  margin-bottom: 3.075625rem;
+}
+
+.form__row--end {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.form__group {
+  display: flex;
+  flex-direction: column;
+  flex: 0 1 25.625rem;
+}
+
+.form__group label {
+  margin-bottom: 0.674375rem;
+}
+
+.form__group label span {
+  color: #be3600;
+}
+
+.form__group input {
+  padding: 0.82875rem 0 0.67125rem 0.884375rem;
+  border: 1px solid #c1c1c1;
+  border-radius: 4px;
+  font-family: Montserrat;
+  font-weight: 500;
+  font-size: 1.125rem;
+  color: #3c3c3c;
+}
+
+.form__group input::-moz-placeholder {
+  color: #3c3c3c;
+  opacity: 0.3;
+}
+
+.form__group input:-ms-input-placeholder {
+  color: #3c3c3c;
+  opacity: 0.3;
+}
+
+.form__group input::placeholder {
+  color: #3c3c3c;
+  opacity: 0.3;
+}
+
+.form__group input:focus {
+  outline: none;
+  border: 1px solid #7bcaf6;
+}
+
+.form__group--textArea {
+  flex: 0 0 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.form__group--textArea label {
+  margin-bottom: 0.674375rem;
+}
+
+.form__group--textArea textarea {
+  height: 6.625rem;
+  width: 100%;
+  border: 1px solid #c1c1c1;
+  resize: none;
+  border-radius: 4px;
+  font-family: Montserrat;
+  font-weight: 500;
+  font-size: 1.125rem;
+  color: #3c3c3c;
+}
+
+.form__group--textArea textarea:focus {
+  outline: none;
+  border: 1px solid #7bcaf6;
+}
+
+.form__button {
+  margin-right: 8.776875rem;
+}
+
+.form__disclaimer {
+  font-size: 0.75rem;
+  color: #858585;
+}
+
+.form__disclaimer span {
+  color: #be3600;
+}
+
 .section-form {
   background-color: #e7e7e7;
   display: flex;
   justify-content: center;
-  padding-top: 3rem;
-  padding-bottom: 4rem;
+  padding-top: 5.125rem;
+  padding-bottom: 6.75rem;
 }
 
 .contact {
@@ -43,17 +160,56 @@ button {
   color: #1c89c6;
   font-size: 2rem;
   font-weight: 500;
+  padding: 3.236875rem 0 2.95125rem 6.82375rem;
+  font-family: Montserrat;
 }
 
 .contact__images {
-  background-color: #f8f8f8;
-  height: 200px;
+  background-color: rgba(231, 231, 231, 0.3);
+  padding: 0 6.8125rem 0 6.8125rem;
+  padding-top: 3.499375rem;
+  padding-bottom: 3.500625rem;
+  display: flex;
+  justify-content: center;
+}
+
+.contact__imageGroup {
+  display: flex;
+}
+
+.contact__imageGroup:first-of-type {
+  margin-right: 1.875rem;
+}
+
+.contact__imageText {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.contact__image {
+  width: 18rem;
+  height: 12.72rem;
+  flex: 1;
+}
+
+.contact__image img {
+  width: 100%;
+  height: 100%;
+}
+
+.contact__form {
+  padding: 0 6.8125rem 0 6.8125rem;
+  padding-top: 4.0125rem;
+  padding-bottom: 3.963125rem;
 }
 
 .contact__footer {
-  background-color: #f8f8f8;
+  background-color: rgba(231, 231, 231, 0.3);
+  padding: 0 6.8125rem 0 6.8125rem;
   display: flex;
-  padding: 4.2025rem 6.8125rem 2.619375rem 6.8125rem;
+  padding-top: 4.2025rem;
+  padding-bottom: 2.619375rem;
 }
 
 .contact__footerText {

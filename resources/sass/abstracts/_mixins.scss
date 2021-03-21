@@ -1,3 +1,7 @@
-@mixin containerPadding {
-    padding: 4.2025rem 6.8125rem 2.619375rem 6.8125rem;
+@mixin sidePadding {
+    padding: 0 6.8125rem 0 6.8125rem;
+}
+
+@mixin alternateFormBGColor {
+    background-color: rgba($color-grey-light-1, 0.3);
 }
