@@ -9,6 +9,7 @@
 html {
   font-size: 100%;
   font-family: Roboto;
+  line-height: 1.875;
 }
 
 body {
@@ -34,6 +35,8 @@ button {
 .contact {
   background-color: #fff;
   flex: 0 1 75%;
+  max-width: 66.875rem;
+  width: 100%;
 }
 
 .contact__title {
@@ -49,5 +52,15 @@ button {
 
 .contact__footer {
   background-color: #f8f8f8;
+  display: flex;
+  padding: 4.2025rem 6.8125rem 2.619375rem 6.8125rem;
+}
+
+.contact__footerText {
+  margin-right: 1.875rem;
+}
+
+.contact__footerImg {
+  margin-top: 0.171875rem;
 }
 
