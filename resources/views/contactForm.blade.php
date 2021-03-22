@@ -119,7 +119,7 @@
                             </div>
                         </div>
 
-                        <div class="form__row--end">
+                        <div class="form__row--submitArea">
                             <div class="form__button">
                                 <button class="button">Submit</button>
                             </div>

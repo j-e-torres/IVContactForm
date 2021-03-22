@@ -1,4 +1,14 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);*,
+@import url(https://fonts.googleapis.com/css?family=Nunito);/*
+
+0 - 475       small phone
+475 - 600     phone
+600 - 900     tablet portrait
+900 - 1024    tablet landscape
+1024 - 1920   normal style
+1920+         big desktop
+*/
+
+*,
 *::after,
 *::before {
   margin: 0;
@@ -52,15 +62,52 @@ button {
   margin-bottom: 3.075625rem;
 }
 
-.form__row--end {
+@media only screen and (max-width: 600px) {
+  .form__row:first-of-type {
+    margin-bottom: 0;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .form__row {
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-bottom: 0;
+  }
+}
+
+.form__row--submitArea {
   display: flex;
   justify-content: flex-start;
+}
+
+@media only screen and (max-width: 600px) {
+  .form__row--submitArea {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .form__group {
   display: flex;
   flex-direction: column;
-  flex: 0 1 25.625rem;
+  flex: 1;
+}
+
+.form__group:first-of-type {
+  margin-right: 1.875rem;
+}
+
+@media only screen and (max-width: 600px) {
+  .form__group:first-of-type {
+    margin-right: 0;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .form__group {
+    margin-bottom: 2rem;
+  }
 }
 
 .form__group label {
@@ -79,6 +126,12 @@ button {
   font-weight: 500;
   font-size: 1.125rem;
   color: #3c3c3c;
+}
+
+@media only screen and (max-width: 600px) {
+  .form__group input {
+    width: 100%;
+  }
 }
 
 .form__group input::-moz-placeholder {
@@ -107,6 +160,12 @@ button {
   flex-direction: column;
 }
 
+@media only screen and (max-width: 600px) {
+  .form__group--textArea {
+    margin-bottom: 2.975rem;
+  }
+}
+
 .form__group--textArea label {
   margin-bottom: 0.674375rem;
 }
@@ -132,6 +191,13 @@ button {
   margin-right: 8.776875rem;
 }
 
+@media only screen and (max-width: 600px) {
+  .form__button {
+    margin-right: 0;
+    margin-bottom: 1.5rem;
+  }
+}
+
 .form__disclaimer {
   font-size: 0.75rem;
   color: #858585;
@@ -149,9 +215,14 @@ button {
   padding-bottom: 6.75rem;
 }
 
+@media only screen and (max-width: 600px) {
+  .section-form {
+    padding: 0;
+  }
+}
+
 .contact {
   background-color: #fff;
-  flex: 0 1 75%;
   max-width: 66.875rem;
   width: 100%;
 }
@@ -164,33 +235,122 @@ button {
   font-family: Montserrat;
 }
 
+@media only screen and (max-width: 600px) {
+  .contact__title {
+    padding: 1.5rem 1rem;
+    font-size: 1.75rem;
+    text-align: center;
+  }
+}
+
 .contact__images {
   background-color: rgba(231, 231, 231, 0.3);
-  padding: 0 6.8125rem 0 6.8125rem;
+  padding-left: 6.8125rem;
+  padding-right: 6.8125rem;
   padding-top: 3.499375rem;
   padding-bottom: 3.500625rem;
   display: flex;
   justify-content: center;
 }
 
+@media only screen and (max-width: 850px) {
+  .contact__images {
+    padding-left: 3.4rem;
+    padding-right: 3.4rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .contact__images {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .contact__images {
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .contact__images {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+}
+
 .contact__imageGroup {
   display: flex;
+  background-color: #fff;
+  border: 1px solid #c1c1c1;
+  border-radius: 10px;
+  padding: 1rem;
+  align-items: center;
 }
 
 .contact__imageGroup:first-of-type {
   margin-right: 1.875rem;
 }
 
+@media only screen and (max-width: 1024px) {
+  .contact__imageGroup:first-of-type {
+    margin-bottom: 1.5rem;
+    margin-right: 0;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .contact__imageGroup {
+    padding: 1rem 0.5rem;
+    flex-direction: column;
+  }
+}
+
 .contact__imageText {
   display: flex;
   flex-direction: column;
   flex: 1;
+  font-family: Montserrat;
+  font-size: 1.125rem;
+  color: #3c3c3c;
+  margin-right: 0.5rem;
+}
+
+@media only screen and (max-width: 1024px) {
+  .contact__imageText {
+    margin-right: 1rem;
+    flex: 11;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .contact__imageText {
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+    margin-right: 0.5rem;
+    flex: 1;
+  }
 }
 
 .contact__image {
   width: 18rem;
   height: 12.72rem;
   flex: 1;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+@media only screen and (max-width: 1024px) {
+  .contact__image {
+    flex: 9;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .contact__image {
+    flex: 1;
+  }
 }
 
 .contact__image img {
@@ -199,24 +359,83 @@ button {
 }
 
 .contact__form {
-  padding: 0 6.8125rem 0 6.8125rem;
+  padding-left: 6.8125rem;
+  padding-right: 6.8125rem;
   padding-top: 4.0125rem;
   padding-bottom: 3.963125rem;
 }
 
+@media only screen and (max-width: 850px) {
+  .contact__form {
+    padding-left: 3.4rem;
+    padding-right: 3.4rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .contact__form {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .contact__form {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+}
+
 .contact__footer {
   background-color: rgba(231, 231, 231, 0.3);
-  padding: 0 6.8125rem 0 6.8125rem;
+  padding-left: 6.8125rem;
+  padding-right: 6.8125rem;
   display: flex;
   padding-top: 4.2025rem;
   padding-bottom: 2.619375rem;
+}
+
+@media only screen and (max-width: 850px) {
+  .contact__footer {
+    padding-left: 3.4rem;
+    padding-right: 3.4rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .contact__footer {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .contact__footer {
+    padding-top: 2rem;
+    padding-bottom: 1.3rem;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .contact__footerText {
   margin-right: 1.875rem;
 }
 
+@media only screen and (max-width: 600px) {
+  .contact__footerText {
+    margin-right: 0;
+    margin-bottom: 1.875rem;
+  }
+}
+
 .contact__footerImg {
   margin-top: 0.171875rem;
+}
+
+@media only screen and (max-width: 600px) {
+  .contact__footerImg {
+    margin-top: 0;
+  }
 }
 
