@@ -10,18 +10,46 @@
 
         &:first-of-type {
             margin-bottom: 3.075625rem;
+
+            @include responsive(phone) {
+                margin-bottom: 0;
+            }
         }
 
-        &--end {
+        @include responsive(phone) {
+            flex-direction: column;
+            justify-content: flex-start;
+            margin-bottom: 0;
+        }
+
+        &--submitArea {
             display: flex;
             justify-content: flex-start;
+
+            @include responsive(phone) {
+                flex-direction: column;
+                align-items: center;
+            }
         }
     }
 
     &__group {
         display: flex;
         flex-direction: column;
-        flex: 0 1 25.625rem;
+        // flex: 0 1 25.625rem;
+        flex: 1;
+
+        &:first-of-type {
+            margin-right: 1.875rem;
+
+            @include responsive(phone) {
+                margin-right: 0;
+            }
+        }
+
+        @include responsive(phone) {
+            margin-bottom: 2rem;
+        }
 
         & label {
             margin-bottom: 0.674375rem;
@@ -39,6 +67,11 @@
             font-weight: 500;
             font-size: $font-size-medium;
             color: $color-grey-dark-2;
+            // width: 25.625rem;
+
+            @include responsive(phone) {
+                width: 100%;
+            }
 
             &::placeholder {
                 color: $color-grey-dark-2;
@@ -56,6 +89,10 @@
             display: flex;
             flex-direction: column;
 
+            @include responsive(phone) {
+                margin-bottom: 2.975rem;
+            }
+
             & label {
                 margin-bottom: 0.674375rem;
             }
@@ -70,6 +107,7 @@
                 font-weight: 500;
                 font-size: $font-size-medium;
                 color: $color-grey-dark-2;
+                padding: 0.82875rem 0 0.67125rem 0.884375rem;
 
                 &:focus {
                     outline: none;
@@ -81,6 +119,11 @@
 
     &__button {
         margin-right: 8.776875rem;
+
+        @include responsive(phone) {
+            margin-right: 0;
+            margin-bottom: 1.5rem;
+        }
     }
 
     &__disclaimer {

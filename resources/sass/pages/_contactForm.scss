@@ -1,0 +1,168 @@
+.section-form {
+    background-color: $color-grey-light-1;
+    display: flex;
+    justify-content: center;
+    padding-top: 5.125rem;
+    padding-bottom: 6.75rem;
+
+    @include responsive(phone) {
+        padding: 0;
+    }
+}
+
+.contact {
+    background-color: #fff;
+    // flex: 0 1 75%;
+    max-width: 66.875rem;
+    width: 100%;
+
+    &__title {
+        color: $color-blue-1;
+        font-size: $font-size-heading;
+        font-weight: 500;
+        padding: 3.236875rem 0 2.95125rem 6.82375rem;
+        font-family: $font-family-secondary;
+
+        @include responsive(phone) {
+            padding: 1.5rem 1rem;
+            font-size: $font-size-heading-mobile;
+            text-align: center;
+        }
+    }
+
+    &__images {
+        @include alternateFormBGColor;
+        @include sidePadding;
+        padding-top: 3.499375rem;
+        padding-bottom: 3.500625rem;
+
+        display: flex;
+        justify-content: center;
+
+        @include responsive(tabletLandscape) {
+            flex-direction: column;
+        }
+
+        @include responsive(phone) {
+            padding-top: 1.5rem;
+            padding-bottom: 1.5rem;
+        }
+    }
+
+    &__imageGroup {
+        display: flex;
+        background-color: #fff;
+        border: 1px solid $color-grey-light-2;
+        border-radius: 10px;
+        padding: 1rem;
+
+        &:first-of-type {
+            margin-right: 1.875rem;
+
+            @include responsive(tabletLandscape) {
+                margin-bottom: 1.5rem;
+                margin-right: 0;
+            }
+        }
+
+        @include responsive(phone) {
+            padding: 1rem 0.5rem;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    &__imageText {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        font-family: $font-family-secondary;
+        font-size: $font-size-medium;
+        color: $color-grey-dark-2;
+        margin-right: 0.5rem;
+
+        @include responsive(tabletLandscape) {
+            margin-right: 1rem;
+            flex: 11;
+        }
+
+        @include responsive(phone) {
+            margin-bottom: 1.5rem;
+            font-size: $font-size-base;
+            margin-right: 0.5rem;
+            flex: 1;
+        }
+    }
+
+    &__image {
+        // 75:53 aspect ratio
+        width: 18rem;
+        height: 12.72rem;
+        flex: 1;
+        border-radius: 10px;
+        overflow: hidden;
+
+        @include responsive(tabletLandscape) {
+            flex: 9;
+        }
+
+        @include responsive(phone) {
+            flex: 1;
+        }
+
+        & img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &__form {
+        @include sidePadding;
+        padding-top: 4.0125rem;
+        padding-bottom: 3.963125rem;
+
+        @include responsive(phone) {
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+        }
+    }
+
+    &__footer {
+        @include alternateFormBGColor;
+        @include sidePadding;
+        display: flex;
+        padding-top: 4.2025rem;
+        padding-bottom: 2.619375rem;
+
+        @include responsive(phone) {
+            padding-top: 2rem;
+            padding-bottom: 1.3rem;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    &__footerText {
+        margin-right: 1.875rem;
+
+        @include responsive(phone) {
+            margin-right: 0;
+            margin-bottom: 1.875rem;
+        }
+    }
+
+    &__footerImg {
+        margin-top: 0.171875rem;
+        height: 11.875rem;
+        width: 11.875rem;
+
+        & img {
+            width: 100%;
+            height: 100%;
+        }
+
+        @include responsive(phone) {
+            margin-top: 0;
+        }
+    }
+}

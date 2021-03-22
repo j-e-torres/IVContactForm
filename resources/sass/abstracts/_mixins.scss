@@ -1,7 +1,55 @@
 @mixin sidePadding {
-    padding: 0 6.8125rem 0 6.8125rem;
+    padding-left: 6.8125rem;
+    padding-right: 6.8125rem;
+
+    @include responsive(tabletPortrait) {
+        padding-left: 3.4rem;
+        padding-right: 3.4rem;
+    }
+
+    @include responsive(phone) {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
 }
 
 @mixin alternateFormBGColor {
     background-color: rgba($color-grey-light-1, 0.3);
+}
+
+// media queries
+/*
+
+0 - 475       small phone
+475 - 600     phone
+600 - 900     tablet portrait
+900 - 1024    tablet landscape
+1024 - 1920   normal style
+1920+         big desktop
+*/
+
+@mixin responsive($breakpoint) {
+    @if $breakpoint == smallPhone {
+        @media only screen and (max-width: 475px) {
+            @content;
+        }
+    }
+
+    @if $breakpoint == phone {
+        @media only screen and (max-width: 600px) {
+            @content;
+        }
+    }
+
+    @if $breakpoint == tabletLandscape {
+        @media only screen and (max-width: 1024px) {
+            @content;
+        }
+    }
+
+    @if $breakpoint == tabletPortrait {
+        @media only screen and (max-width: 850px) {
+            @content;
+        }
+    }
 }
