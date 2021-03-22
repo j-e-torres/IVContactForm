@@ -32,7 +32,8 @@
 
                         <div class="contact__image">
                             <img
-                                srcset="{{ asset('assets/img/godzilla-1x.jpg') }} 1x, {{ asset('assets/img/godzilla-2x.jpeg') }} 2x"
+                                class="lazyload"
+                                data-srcset="{{ asset('assets/img/godzilla-1x.jpg') }} 1x, {{ asset('assets/img/godzilla-2x.jpeg') }} 2x"
                                 alt="Godzilla"
                             />
                         </div>
@@ -48,7 +49,8 @@
 
                         <div class="contact__image">
                             <img
-                                srcset="{{ asset('assets/img/godzilla-shake-1x.jpg') }} 1x, {{ asset('assets/img/godzilla-shake-2x.jpeg') }} 2x"
+                                class="lazyload"
+                                data-srcset="{{ asset('assets/img/godzilla-shake-1x.jpg') }} 1x, {{ asset('assets/img/godzilla-shake-2x.jpeg') }} 2x"
                                 alt="Godzilla shaking Kong's hand"
                             />
                         </div>
@@ -152,7 +154,7 @@
                     </div>
 
                     <div class="contact__footerImg">
-                        <img src="{{ asset('assets/img/thankyou.png') }}" alt="thank you" />
+                        <img class="lazyload" data-src="{{ asset('assets/img/thankyou.png') }}" alt="thank you" />
                     </div>
 
 
@@ -161,5 +163,7 @@
             </div>
         </section>
 
+        <!-- <script src="https://unpkg.com/lazysizes@5.3.0/lazysizes.js"></script> -->
+        <script src="https://afarkas.github.io/lazysizes/lazysizes.min.js"></script>
     </body>
 </html>
