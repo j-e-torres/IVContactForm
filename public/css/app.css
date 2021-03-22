@@ -180,6 +180,7 @@ button {
   font-weight: 500;
   font-size: 1.125rem;
   color: #3c3c3c;
+  padding: 0.82875rem 0 0.67125rem 0.884375rem;
 }
 
 .form__group--textArea textarea:focus {
@@ -286,7 +287,6 @@ button {
   border: 1px solid #c1c1c1;
   border-radius: 10px;
   padding: 1rem;
-  align-items: center;
 }
 
 .contact__imageGroup:first-of-type {
@@ -304,6 +304,7 @@ button {
   .contact__imageGroup {
     padding: 1rem 0.5rem;
     flex-direction: column;
+    align-items: center;
   }
 }
 
@@ -431,6 +432,13 @@ button {
 
 .contact__footerImg {
   margin-top: 0.171875rem;
+  height: 11.875rem;
+  width: 11.875rem;
+}
+
+.contact__footerImg img {
+  width: 100%;
+  height: 100%;
 }
 
 @media only screen and (max-width: 600px) {

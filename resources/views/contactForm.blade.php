@@ -31,8 +31,10 @@
 
 
                         <div class="contact__image">
-
-                            <img src="{{ asset('assets/img/godzilla.jpeg') }}" alt="godzilla" />
+                            <img
+                                srcset="{{ asset('assets/img/godzilla-1x.jpg') }} 1x, {{ asset('assets/img/godzilla-2x.jpeg') }} 2x"
+                                alt="Godzilla"
+                            />
                         </div>
                     </div>
 
@@ -45,7 +47,10 @@
                         </div>
 
                         <div class="contact__image">
-                            <img src="{{ asset('assets/img/godzilla-shake.jpeg') }}" alt="godzilla shake">
+                            <img
+                                srcset="{{ asset('assets/img/godzilla-shake-1x.jpg') }} 1x, {{ asset('assets/img/godzilla-shake-2x.jpeg') }} 2x"
+                                alt="Godzilla shaking Kong's hand"
+                            />
                         </div>
                     </div>
 
@@ -53,7 +58,7 @@
 
 
                 <div class="contact__form">
-                    <form class='form'>
+                    <form name="contactForm" class='form' action="" method="post">
 
                         <div class="form__row">
                             <div class="form__group">
@@ -114,7 +119,7 @@
                             <div class="form__group--textArea">
                                 <label for="message" class="form__label">Your message</label>
 
-                                <textarea name="message"></textarea>
+                                <textarea id="message" name="message"></textarea>
 
                             </div>
                         </div>
@@ -147,7 +152,7 @@
                     </div>
 
                     <div class="contact__footerImg">
-                        <img src="{{ asset('assets/img/thankyou.png') }}" />
+                        <img src="{{ asset('assets/img/thankyou.png') }}" alt="thank you" />
                     </div>
 
 
