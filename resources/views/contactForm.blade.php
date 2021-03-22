@@ -163,7 +163,6 @@
             </div>
         </section>
 
-        <!-- <script src="https://unpkg.com/lazysizes@5.3.0/lazysizes.js"></script> -->
         <script src="https://afarkas.github.io/lazysizes/lazysizes.min.js"></script>
     </body>
 </html>
