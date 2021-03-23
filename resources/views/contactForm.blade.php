@@ -32,7 +32,8 @@
 
                         <div class="contact__image">
                             <img
-                                srcset="{{ asset('assets/img/godzilla-1x.jpg') }} 1x, {{ asset('assets/img/godzilla-2x.jpeg') }} 2x"
+                                class="lazyload"
+                                data-srcset="{{ asset('assets/img/godzilla-1x.jpg') }} 1x, {{ asset('assets/img/godzilla-2x.jpeg') }} 2x"
                                 alt="Godzilla"
                             />
                         </div>
@@ -48,7 +49,8 @@
 
                         <div class="contact__image">
                             <img
-                                srcset="{{ asset('assets/img/godzilla-shake-1x.jpg') }} 1x, {{ asset('assets/img/godzilla-shake-2x.jpeg') }} 2x"
+                                class="lazyload"
+                                data-srcset="{{ asset('assets/img/godzilla-shake-1x.jpg') }} 1x, {{ asset('assets/img/godzilla-shake-2x.jpeg') }} 2x"
                                 alt="Godzilla shaking Kong's hand"
                             />
                         </div>
@@ -58,7 +60,9 @@
 
 
                 <div class="contact__form">
-                    <form name="contactForm" class='form' action="" method="post">
+                    <form name="contactForm" class='form' action="{{ route('submit') }}" method="post">
+                        @csrf
+
 
                         <div class="form__row">
                             <div class="form__group">
@@ -69,6 +73,7 @@
                                     placeholder="Enter your name"
                                     required
                                     id="name"
+                                    name='name'
                                     class="form__input"
                                 />
                             </div>
@@ -81,6 +86,7 @@
                                     placeholder="Enter your email"
                                     required
                                     id="email"
+                                    name='email'
                                     class="form__input"
                                 />
                             </div>
@@ -96,6 +102,7 @@
                                     placeholder="Enter your phone number"
                                     required
                                     id="phone"
+                                    name='phone'
                                     class="form__input"
                                 />
                             </div>
@@ -103,13 +110,13 @@
                             <div class="form__group">
 
                                 <!-- <select -->
-                                <label for="subject" class="form__label">Subject of Inquiry</label>
+                                <label for="subjectInquiry" class="form__label">Subject of Inquiry</label>
 
                                 <input
                                     type="text"
                                     placeholder="— Please select one —"
-                                    required
-                                    id="subject"
+                                    id="subjectInquiry"
+                                    name='subjectInquiry'
                                     class="form__input"
                                 />
                             </div>
@@ -126,7 +133,7 @@
 
                         <div class="form__row--submitArea">
                             <div class="form__button">
-                                <button class="button">Submit</button>
+                                <button type='submit' class="button">Submit</button>
                             </div>
 
 
@@ -152,7 +159,7 @@
                     </div>
 
                     <div class="contact__footerImg">
-                        <img src="{{ asset('assets/img/thankyou.png') }}" alt="thank you" />
+                        <img class="lazyload" data-src="{{ asset('assets/img/thankyou.png') }}" alt="thank you" />
                     </div>
 
 
@@ -161,5 +168,6 @@
             </div>
         </section>
 
+        <script src="https://afarkas.github.io/lazysizes/lazysizes.min.js"></script>
     </body>
 </html>
