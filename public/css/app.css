@@ -224,6 +224,33 @@ button {
   color: #be3600;
 }
 
+.success {
+  padding-left: 6.8125rem;
+  padding-right: 6.8125rem;
+  background-color: #4bca81;
+  height: 10rem;
+  color: #fff;
+  font-size: 1.125rem;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media only screen and (max-width: 850px) {
+  .success {
+    padding-left: 3.4rem;
+    padding-right: 3.4rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .success {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
 .section-form {
   background-color: #e7e7e7;
   display: flex;
