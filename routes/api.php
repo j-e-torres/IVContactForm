@@ -18,4 +18,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('/storeMessage', [FormController::class, 'store']);
+Route::post('/storeMessage', [FormController::class, 'store'])->name('submit');
