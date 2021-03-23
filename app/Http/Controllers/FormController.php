@@ -38,10 +38,6 @@ class FormController extends Controller
     {
         // request obj will have: name, email, phone
         // optional properties: subjectInquiry, message
-        $out = new \Symfony\Component\Console\Output\ConsoleOutput();
-$out->writeln($request);
-
-
 
         $validatedData = $request->validate([
             'name' => 'required|string',

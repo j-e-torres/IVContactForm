@@ -68,14 +68,24 @@
                             <div class="form__group">
                                 <label for="name" class="form__label">Name<span> *<span></label>
 
+
                                 <input
                                     type="text"
                                     placeholder="Enter your name"
-                                    required
                                     id="name"
                                     name='name'
-                                    class="form__input"
+                                    class="form__input{{ $errors->has('name') ? ' form__input--error' : '' }}"
+                                    value=" {{ $errors->has('name') ? $errors->first('name') : '' }}  "
                                 />
+
+
+                                @if ($errors->has('name'))
+                                    <span class="form__errorMsg" role="alert">
+                                        Please provide your Name
+                                    </span>
+                                @endif
+
+
                             </div>
 
                             <div class="form__group">
@@ -84,11 +94,17 @@
                                 <input
                                     type="text"
                                     placeholder="Enter your email"
-                                    required
                                     id="email"
                                     name='email'
-                                    class="form__input"
+                                    class="form__input{{ $errors->has('email') ? ' form__input--error' : '' }}"
+                                    value=" {{ $errors->has('email') ? $errors->first('email') : '' }}  "
                                 />
+
+                                 @if ($errors->has('email'))
+                                    <span class="form__errorMsg" role="alert">
+                                        Please provide your Email
+                                    </span>
+                                @endif
                             </div>
                         </div>
 
@@ -100,11 +116,16 @@
                                 <input
                                     type="text"
                                     placeholder="Enter your phone number"
-                                    required
                                     id="phone"
                                     name='phone'
-                                    class="form__input"
-                                />
+                                    class="form__input{{ $errors->has('phone') ? ' form__input--error' : '' }}"
+                                    value=" {{ $errors->has('phone') ? $errors->first('phone') : '' }}  "                                />
+
+                                @if ($errors->has('phone'))
+                                    <span class="form__errorMsg" role="alert">
+                                        Please provide your Phone number
+                                    </span>
+                                @endif
                             </div>
 
                             <div class="form__group">
