@@ -38,22 +38,24 @@ class FormController extends Controller
     {
         // request obj will have: name, email, phone
         // optional properties: subjectInquiry, message
-        $out = new \Symfony\Component\Console\Output\ConsoleOutput();
-$out->writeln($request);
-
-
 
         $validatedData = $request->validate([
             'name' => 'required|string',
             'email' => 'required|email|string',
-            'phone' => 'required|string',
+            'phone' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
+
             'subjectInquiry' => 'sometimes|nullable|string',
             'message' => 'sometimes|nullable|string',
         ]);
 
         $newMessage = ContactForm::create($validatedData);
 
-        return response($newMessage, 201);
+        // return redirect('success')->with('message', 'Successfully Submitted');
+
+        // return response()->view('success')->with('message', 'Successfully Submitted');
+        return redirect()->back()->with('message', 'Successfully Submitted');
+
+        // return response($newMessage, 201);
 
         // return response(201)->json([
         //     'status' => 'success',

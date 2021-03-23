@@ -1,4 +1,5 @@
 <?php
+use App\Http\Controllers\FormController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,6 @@
 
 Route::get('/', function () {
     return view('contactForm');
-});
+})->name('form');
 
-
+Route::post('/storeMessage', [FormController::class, 'store'])->name('submit');

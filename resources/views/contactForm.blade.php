@@ -5,7 +5,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}" >
+        <link rel="stylesheet" type= "text/css" href="{{ asset('css/app.css') }}" >
+        <script defer src="{{ asset('js/myScript.js') }}"></script>
 
         <title>IV Contact Form</title>
     </head>
@@ -13,7 +14,6 @@
 
         <section class="section-form">
             <div class="contact">
-
 
                 <h1 class="contact__title">Contact Form Demo Project</h1>
 
@@ -59,92 +59,123 @@
                 </div>
 
 
+                @if(session()->has('message'))
+                    <div class="success">
+                        {{ session()->get('message') }}
+                    </div>
+                @endif
+
+
                 <div class="contact__form">
-                    <form name="contactForm" class='form' action="{{ route('submit') }}" method="post">
-                        @csrf
+    <form id="form" name="contactForm" class='form' action="{{ route('submit') }}" method="post">
+        @csrf
 
 
-                        <div class="form__row">
-                            <div class="form__group">
-                                <label for="name" class="form__label">Name<span> *<span></label>
-
-                                <input
-                                    type="text"
-                                    placeholder="Enter your name"
-                                    required
-                                    id="name"
-                                    name='name'
-                                    class="form__input"
-                                />
-                            </div>
-
-                            <div class="form__group">
-                                <label for="email" class="form__label">Email<span> *<span></label>
-
-                                <input
-                                    type="text"
-                                    placeholder="Enter your email"
-                                    required
-                                    id="email"
-                                    name='email'
-                                    class="form__input"
-                                />
-                            </div>
-                        </div>
-
-                        <div class="form__row">
-
-                            <div class="form__group">
-                                <label for="phone" class="form__label">Phone<span> *<span></label>
-
-                                <input
-                                    type="text"
-                                    placeholder="Enter your phone number"
-                                    required
-                                    id="phone"
-                                    name='phone'
-                                    class="form__input"
-                                />
-                            </div>
-
-                            <div class="form__group">
-
-                                <!-- <select -->
-                                <label for="subjectInquiry" class="form__label">Subject of Inquiry</label>
-
-                                <input
-                                    type="text"
-                                    placeholder="— Please select one —"
-                                    id="subjectInquiry"
-                                    name='subjectInquiry'
-                                    class="form__input"
-                                />
-                            </div>
-                        </div>
-
-                        <div class="form__row">
-                            <div class="form__group--textArea">
-                                <label for="message" class="form__label">Your message</label>
-
-                                <textarea id="message" name="message"></textarea>
-
-                            </div>
-                        </div>
-
-                        <div class="form__row--submitArea">
-                            <div class="form__button">
-                                <button type='submit' class="button">Submit</button>
-                            </div>
+        <div class="form__row">
+            <div class="form__group">
+                <label for="name" class="form__label">Name<span> *<span></label>
 
 
-                            <p class="form__disclaimer">
-                                <span>* Required Fields. </span>Please be aware that we cannot ensure that communications sent over the Internet are secure. This includes correspondence sent through this form or by email. If you are uncomfortable with such risks, you may contact us by phone instead of using this form.
-                            </p>
-                        </div>
+                <input
+                    type="text"
+                    placeholder="Enter your name"
+                    id="name"
+                    name='name'
+                    class="form__input{{ $errors->has('name') ? ' form__input--error' : '' }}"
+                    value=" {{ $errors->has('name') ? $errors->first('name') : '' }}  "
+                />
 
-                    </form>
 
-                </div>
+                @if ($errors->has('name'))
+                    <span class="form__errorMsg" role="alert">
+                        Please provide your Name
+                    </span>
+                @endif
+
+
+            </div>
+
+            <div class="form__group">
+                <label for="email" class="form__label">Email<span> *<span></label>
+
+                <input
+                    type="text"
+                    placeholder="Enter your email"
+                    id="email"
+                    name='email'
+                    class="form__input{{ $errors->has('email') ? ' form__input--error' : '' }}"
+                    value=" {{ $errors->has('email') ? $errors->first('email') : '' }}  "
+                />
+
+                @if ($errors->has('email'))
+                    <span class="form__errorMsg" role="alert">
+                        Please provide your Email
+                    </span>
+                @endif
+            </div>
+        </div>
+
+        <div class="form__row">
+
+            <div class="form__group">
+                <label for="phone" class="form__label">Phone<span> *<span></label>
+
+                <input
+                    type="text"
+                    placeholder="Enter your phone number"
+                    id="phone"
+                    name='phone'
+                    class="form__input{{ $errors->has('phone') ? ' form__input--error' : '' }}"
+                    value=" {{ $errors->has('phone') ? $errors->first('phone') : '' }}  "                                />
+
+                @if ($errors->has('phone'))
+                    <span class="form__errorMsg" role="alert">
+                        Please provide your Phone number
+                    </span>
+                @endif
+            </div>
+
+            <div class="form__group">
+
+                <!-- <select -->
+                <label for="subjectInquiry" class="form__label">Subject of Inquiry</label>
+
+                <input
+                    type="text"
+                    placeholder="— Please select one —"
+                    id="subjectInquiry"
+                    name='subjectInquiry'
+                    class="form__input"
+                />
+            </div>
+        </div>
+
+        <div class="form__row">
+            <div class="form__group--textArea">
+                <label for="message" class="form__label">Your message</label>
+
+                <textarea id="message" name="message"></textarea>
+
+            </div>
+        </div>
+
+        <div class="form__row--submitArea">
+            <div class="form__button">
+                <button form="form" type='submit' class="button">Submit</button>
+            </div>
+
+
+            <p class="form__disclaimer">
+                <span>* Required Fields. </span>Please be aware that we cannot ensure that communications sent over the Internet are secure. This includes correspondence sent through this form or by email. If you are uncomfortable with such risks, you may contact us by phone instead of using this form.
+            </p>
+        </div>
+
+    </form>
+</div>
+
+
+
+
 
                 <div class="contact__footer">
                     <div class="contact__footerText">
